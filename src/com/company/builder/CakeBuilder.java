@@ -1,8 +1,9 @@
 package com.company.builder;
 
 import com.company.model.Cake;
+import com.company.model.Eating;
 
-public class CakeBuilder {
+public class CakeBuilder implements Builder{
     private String weight;
     private String height;
 
@@ -48,7 +49,7 @@ public class CakeBuilder {
         return this;
     }
 
-    public Cake build(){
+    public Eating build(){
         return new Cake(this);
     }
 }

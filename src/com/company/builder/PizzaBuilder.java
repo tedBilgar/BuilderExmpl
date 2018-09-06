@@ -1,8 +1,9 @@
 package com.company.builder;
 
+import com.company.model.Eating;
 import com.company.model.Pizza;
 
-public class PizzaBuilder {
+public class PizzaBuilder implements Builder{
     private String size;
     private String price;
 
@@ -60,7 +61,7 @@ public class PizzaBuilder {
         return helloMessage;
     }
 
-    public Pizza build() {
+    public Eating build() {
         return new Pizza(this);
     }
 }
