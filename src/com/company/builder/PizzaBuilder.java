@@ -10,24 +10,57 @@ public class PizzaBuilder {
     private boolean pepperoni  = false;
     private String helloMessage = "Plain hello";
 
-    public PizzaBuilder(String size,String price){
+    public PizzaBuilder(String size, String price) {
         this.size = size;
         this.price = price;
     }
 
-    public void setCheese(boolean cheese) {
+    public PizzaBuilder setSize(String size) {
+        this.size = size;
+        return this;
+    }
+
+    public PizzaBuilder setPrice(String price) {
+        this.price = price;
+        return this;
+    }
+
+    public PizzaBuilder setCheese(boolean cheese) {
         this.cheese = cheese;
+        return this;
     }
 
-    public void setPepperoni(boolean pepperoni) {
+    public PizzaBuilder setPepperoni(boolean pepperoni) {
         this.pepperoni = pepperoni;
+        return this;
     }
 
-    public void setHelloMessage(String helloMessage) {
+    public PizzaBuilder setHelloMessage(String helloMessage) {
         this.helloMessage = helloMessage;
+        return this;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public boolean isCheese() {
+        return cheese;
+    }
+
+    public boolean isPepperoni() {
+        return pepperoni;
+    }
+
+    public String getHelloMessage() {
+        return helloMessage;
     }
 
     public Pizza build() {
-        return new Pizza();
+        return new Pizza(this);
     }
 }

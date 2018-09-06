@@ -1,5 +1,7 @@
 package com.company.model;
 
+import com.company.builder.PizzaBuilder;
+
 public class Pizza {
     private String size;
     private String price;
@@ -8,9 +10,12 @@ public class Pizza {
     private boolean pepperoni;
     private String helloMessage;
 
-    public Pizza(String size,String price){
-        this.size = size;
-        this.price = price;
+    public Pizza(PizzaBuilder pizzaBuilder){
+        this.size = pizzaBuilder.getSize();
+        this.price = pizzaBuilder.getPrice();
+        this.cheese = pizzaBuilder.isCheese();
+        this.pepperoni = pizzaBuilder.isPepperoni();
+        this.helloMessage = pizzaBuilder.getHelloMessage();
     }
 
     public String getSize() {
@@ -51,5 +56,16 @@ public class Pizza {
 
     public void setHelloMessage(String helloMessage) {
         this.helloMessage = helloMessage;
+    }
+
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "size='" + size + '\'' +
+                ", price='" + price + '\'' +
+                ", cheese=" + cheese +
+                ", pepperoni=" + pepperoni +
+                ", helloMessage='" + helloMessage + '\'' +
+                '}';
     }
 }
