@@ -2,7 +2,9 @@ package com.company.model;
 
 import com.company.builder.CakeBuilder;
 
-public class Cake {
+import java.util.logging.SocketHandler;
+
+public class Cake implements Eating{
     private String weight;
     private String height;
 
@@ -56,5 +58,11 @@ public class Cake {
                 ", isMeat=" + isMeat +
                 ", isCherry=" + isCherry +
                 '}';
+    }
+
+    @Override
+    public void start() {
+        System.out.println("Это пирожок: ");
+        System.out.println(this.toString());
     }
 }

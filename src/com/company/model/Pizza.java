@@ -2,7 +2,7 @@ package com.company.model;
 
 import com.company.builder.PizzaBuilder;
 
-public class Pizza {
+public class Pizza implements Eating{
     private String size;
     private String price;
 
@@ -67,5 +67,11 @@ public class Pizza {
                 ", pepperoni=" + pepperoni +
                 ", helloMessage='" + helloMessage + '\'' +
                 '}';
+    }
+
+    @Override
+    public void start() {
+        System.out.println("Это пицца: ");
+        System.out.println(this.toString());
     }
 }
